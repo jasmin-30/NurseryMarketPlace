@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Title Block > Start -->
+{% block title %}
+    Login
+{% endblock title %}
+<!-- Title Block > End -->
+
+<!-- Custom CSS Block > Start -->
+{% block custom_css %}
+{% endblock custom_css %}
+<!-- Custom CSS Block > End -->
+
+<!-- Body Block > Start -->
+{% block body %}
+
+    <header class="section-header">
+        <section class="header-main border-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="{% url 'home' %}" class="brand-wrap">
+                            <h3>Nursery Market</h3>
+                        </a> <!-- brand-wrap.// -->
+                    </div>
+                </div> <!-- row.// -->
+            </div> <!-- container.// -->
+        </section> <!-- header-main .// -->
+    </header> <!-- section-header.// -->
+
+
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-conten padding-y" style="min-height:84vh">
+
+        <!-- ============================ COMPONENT LOGIN   ================================= -->
+        <div class="card mx-auto" style="max-width: 380px; margin-top:10px;">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Sign in</h4>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input name="email" class="form-control" placeholder="Email Address" type="email" required>
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <input name="password" class="form-control" placeholder="Password" type="password" required>
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group">
+                        <a href="#">Forgot password?</a>
+                    </div> <!-- form-group form-check .// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Login</button>
+                    </div> <!-- form-group// -->
+                </form>
+            </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+
+        <p class="text-center mt-4">Don't have account? <a href="{% url 'register' %}">Sign up</a></p>
+        <br><br>
+        <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+
+
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+{% endblock body %}
+<!-- Body Block > End -->
+
+<!-- Custom Js Block > Start -->
+{% block custom_js %}
+{% endblock custom_js %}
+<!-- Custom Js Block > Start -->
